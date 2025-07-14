@@ -39,40 +39,122 @@ socketio-chat/
 
 ## Getting Started
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week5-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+1. Clone the repository:
+```bash
+git clone https://github.com/PLP-MERN-Stack-Development/week-5-web-sockets-assignment-ericksaddam.git
+cd week-5-web-sockets-assignment-ericksaddam
+```
 
-## Files Included
+2. Install dependencies:
+```bash
+# Install server dependencies
+cd server
+npm install
 
-- `Week5-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Socket.io configuration templates
-  - Sample components for the chat interface
+# Install client dependencies
+cd ../client
+npm install
+```
 
-## Requirements
+3. Set up environment variables:
+   - Create `.env` in the server directory:
+     ```
+     PORT=5001
+     MONGODB_URI=your_mongodb_uri
+     JWT_SECRET=your_jwt_secret
+     ```
+   - Create `.env` in the client directory:
+     ```
+     VITE_API_URL=http://localhost:5001
+     ```
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Basic understanding of React and Express
+4. Start the application:
+```bash
+# Start the server (from server directory)
+npm run dev
 
-## Submission
+# Start the client (from client directory)
+npm run dev
+```
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+## Implemented Features
 
-1. Complete both the client and server portions of the application
-2. Implement the core chat functionality
-3. Add at least 3 advanced features
-4. Document your setup process and features in the README.md
-5. Include screenshots or GIFs of your working application
-6. Optional: Deploy your application and add the URLs to your README.md
+### Core Features
+1. **Real-time Messaging**
+   - Instant message delivery
+   - Message persistence
+   - Optimistic UI updates
+   - Message delivery confirmation
+
+2. **User Management**
+   - Username-based authentication
+   - Online/offline status
+   - User presence indicators
+   - Profile management
+
+3. **Chat Rooms**
+   - Multiple chat room support
+   - Room creation and management
+   - Room-specific message history
+   - Room switching with state preservation
+
+### Advanced Features
+1. **Message Enhancements**
+   - File attachments
+   - Message reactions
+   - Read receipts
+   - Message search functionality
+   - Message pagination
+
+2. **Real-time Interactions**
+   - Typing indicators
+   - User join/leave notifications
+   - Unread message counters
+   - Sound notifications
+   - Browser notifications
+
+3. **User Experience**
+   - Responsive design
+   - Loading states
+   - Error handling with toasts
+   - Reconnection handling
+   - Optimistic updates
+
+4. **Performance Optimizations**
+   - Message pagination
+   - Socket.io room optimization
+   - Efficient state management
+   - Proper cleanup and memory management
+
+## Technical Implementation
+
+### Client-side Architecture
+- React with hooks for state management
+- Socket.io-client for real-time communication
+- ChakraUI for responsive design
+- Custom hooks for socket management
+- Error boundary implementation
+
+### Server-side Architecture
+- Express.js server
+- Socket.io for real-time features
+- MongoDB for data persistence
+- JWT for authentication
+- Room-based message organization
+
+## Screenshots
+- Login/Authentication screen
+- Main chat interface
+
+## Deployment
+
+[TODO: Add deployment URLs once deployed]
+- Frontend: [URL]
+- Backend: [URL]
 
 ## Resources
 
 - [Socket.io Documentation](https://socket.io/docs/v4/)
 - [React Documentation](https://react.dev/)
 - [Express.js Documentation](https://expressjs.com/)
-- [Building a Chat Application with Socket.io](https://socket.io/get-started/chat) 
+- [Building a Chat Application with Socket.io](https://socket.io/get-started/chat)
